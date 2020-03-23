@@ -1,5 +1,5 @@
 {
-  "name": "y",
+  "name": "virus-stats-scraper",
   "version": "1.0.0",
   "description": "",
   "main": "scraper.js",
@@ -9,6 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "puppeteer": "^2.1.1"
+    "puppeteer": "^2.1.1",
+    "minimist": ">=1.2.5"
+  },
+  "resolutions": {
+    "minimist": "^1.2.5"
   }
 }

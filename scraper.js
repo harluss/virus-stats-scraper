@@ -7,7 +7,7 @@ const puppeteer = require('puppeteer');
   const page = await browser.newPage();
   await page.goto('https://www.worldometers.info/coronavirus/#countries');
 
-  const [results, errors] = await page.evaluate((countries) => {
+  const [results, errors] = await page.evaluate(countries => {
     const table = document.querySelector('table#main_table_countries_yesterday');
 
     const tableHeaders = table.querySelector('thead > tr').children;
@@ -29,11 +29,7 @@ const puppeteer = require('puppeteer');
       const values = [...dataRows].map(r => r.innerText.trim());
 
       let dataCountry = {};
-
-      headers.forEach((h, i) => {
-        dataCountry[h] = values[i];
-      });
-
+      headers.forEach((h, i) => dataCountry[h] = values[i]);
       bigData.push(dataCountry);
     });
 
