@@ -36,7 +36,7 @@ const puppeteer = require('puppeteer');
 		return [bigData, noData];
 	}, countries);
 
-	results.sort((a, b) => parseFloat(b.TotalCases) - parseFloat(a.TotalCases));
+	results.sort((a, b) => parseFloat(b.TotalCases.replace(/,/g, '')) - parseFloat(a.TotalCases.replace(/,/g, '')));
 	console.table(results);
 
 	if (errors.length > 0) {
